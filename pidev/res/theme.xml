@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<resource majorVersion="1" minorVersion="11" useXmlUI="false">
+    <image name="activation-background.jpg"  />
+    <image name="confirmation-background.jpg"  />
+    <image name="facebook-logo.png"  />
+    <image name="Logo.png"  />
+    <image name="news-item-1.jpg"  />
+    <image name="news-item-2.jpg"  />
+    <image name="news-item-3.jpg"  />
+    <image name="news-item-4.jpg"  />
+    <image name="news-item.jpg"  />
+    <image name="news-tab-down-arrow.png"  />
+    <image name="news-tab-down.png"  />
+    <image name="on-off-off.png"  />
+    <image name="on-off-on.png"  />
+    <image name="profile-background.jpg"  />
+    <image name="profile-pic.jpg"  />
+    <image name="signin-background.jpg"  />
+    <image name="signup-background.jpg"  />
+    <image name="smily.png"  />
+    <theme name="Theme">
+        <val key="@includeNativeBool" value="true" />
+        <val key="Form.bgImage" value="profile-background.jpg" />
+        <val key="Form.bgType" value="1" />
+        <val key="sel#bgImage" value="profile-background.jpg" />
+        <val key="sel#bgType" value="1" />
+    </theme>
+    <image name="timeline-background.jpg"  />
+    <image name="twitter-logo.png"  />
+    <image name="welcome-background.jpg"  />
+    <image name="welcome-slide-1.png"  />
+    <image name="welcome-slide-2.png"  />
+    <image name="welcome-slide-3.png"  />
+</resource>
