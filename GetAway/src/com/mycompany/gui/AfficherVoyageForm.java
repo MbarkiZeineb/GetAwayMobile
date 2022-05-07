@@ -46,7 +46,7 @@ public class AfficherVoyageForm extends Form {
                
                  bnt.addActionListener(e->
                          {
-                             new AjouterVoyageOForm(res,p).show();
+                             new ReserverVoyageOForm(res,p).show();
                          }
                  
                  );

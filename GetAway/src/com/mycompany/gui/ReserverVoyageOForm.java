@@ -44,10 +44,10 @@ import com.codename1.ui.plaf.Style;
  *
  * @author Asus
  */
-public class AjouterVoyageOForm   extends BaseForm {
+public class ReserverVoyageOForm   extends BaseForm {
   
     Form current;
-    public AjouterVoyageOForm(Resources res,voyageOrganise p ) {
+    public ReserverVoyageOForm(Resources res,voyageOrganise p ) {
     
      super("Ajouter",new FlowLayout(CENTER, CENTER));
      
@@ -56,7 +56,7 @@ public class AjouterVoyageOForm   extends BaseForm {
     setTitle("Reservation voyage organise  ");
    TextField tnbreplace = new TextField("","Nombres de places",20, TextField.ANY);
       tnbreplace.setUIID("TextFieldBlack");
-   ComboBox<String> comboModalite= new ComboBox<String>("Cache" ,"Cheque","Carte bancaire");
+   ComboBox<String> comboModalite= new ComboBox<String>("","Cache" ,"Cheque","Carte bancaire");
      Button btnreservervoy = new Button("reserver");
     Container cnt;
         cnt = BoxLayout.encloseY(
@@ -70,19 +70,25 @@ public class AjouterVoyageOForm   extends BaseForm {
          btnreservervoy.addActionListener(
         
         (ActionEvent e)->{
-          int nb=((int)Float.parseFloat(tnbreplace.getText()));
+        
+            if(!tnbreplace.getText().equals("") &&  onlyDigits(tnbreplace.getText(),tnbreplace.getText().length()) && ! comboModalite.getSelectedItem().equals("") )
+            {  int nb=((int)Float.parseFloat(tnbreplace.getText()));
             System.out.println(nb+"jj"+p.getNbrPlace());
           if(   p.getNbrPlace() >= nb )
-          {
+          { 
               ReservationService rs= new ReservationService();
-              rs.addReservationVoy(nb,p,6,comboModalite.getSelectedItem());
+              rs.addReservationVoy(nb,p,SessionManager.getId(),comboModalite.getSelectedItem());
                new FormListReservation(res).show();
           }
           else
           { 
                 ToastBar.showInfoMessage("il n'y a pas de place disponible. il reste seulement"+p.getNbrPlace()+"places").show();
           }
-        
+            }
+            else
+            {
+               ToastBar.showInfoMessage("Verifier vos champs ").show(); 
+            }
         
         }
         );
@@ -91,8 +97,26 @@ public class AjouterVoyageOForm   extends BaseForm {
            
     }
    
-
-   
+ public boolean onlyDigits(String str, int n)
+    {
+        // Traverse the string from
+        // start to end
+        for (int i = 0; i < n; i++) {
+  
+            // Check if character is
+            // digit from 0-9
+            // then return true
+            // else false
+            if (str.charAt(i) >= '0'
+                && str.charAt(i) <= '9') {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+        return false;
+    }
     
    
    

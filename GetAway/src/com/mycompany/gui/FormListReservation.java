@@ -58,7 +58,7 @@ public class FormListReservation  extends BaseForm {
           Container cnt= new Container(BoxLayout.y());
         current = this ;
         super.addSideMenu(res);
-         List<Reservation> list=ReservationService.getInstance().getMyReservations(6);
+         List<Reservation> list=ReservationService.getInstance().getMyReservations(SessionManager.getId());
           Container cnt3= new Container(BoxLayout.y());
         for(Reservation p:list){
         Container cnt2= new Container(BoxLayout.x());
@@ -82,11 +82,13 @@ public class FormListReservation  extends BaseForm {
         Modifier.setIcon(mFontImage);
         Modifier.setTextPosition(LEFT);
             Label type=new Label("Type de Reservation : "+p.getType());
+             Label DateR =new Label("Date Reservation :  "+ p.getDate_reservation().toString());
             Label DateDebut =new Label("Date Debut :"+ p.getDate_debut().toString());
              Label DateFin =new Label("Date Fin :  "+ p.getDate_fin().toString());
              Label etat =new Label("Etat :  "+ p.getEtat());
              Button P= new Button("details Paiement");
-                 cnt.addAll(cnt2,type,DateDebut,DateFin,etat);
+              Label nombrep =new Label(" Nombre de place  :  "+ p.getNbr_place()+"");
+                 cnt.addAll(cnt2,type, DateR,DateDebut,DateFin,etat, nombrep);
                    cnt.add(Supprimer);
                    cnt.add( Modifier);
                    cnt.add(P);

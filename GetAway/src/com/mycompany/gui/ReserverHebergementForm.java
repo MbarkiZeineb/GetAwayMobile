@@ -52,7 +52,7 @@ ReservationService rs = new ReservationService();
              hb.setReferance(id);
             hb.setPrix(850);
                   try {
-                      rs.addHbergement((new SimpleDateFormat("yyyy-MM-dd")).format(dated.getDate()),(new SimpleDateFormat("yyyy-MM-dd")).format(datef.getDate()), hb, 6,comboModalite.getSelectedItem());
+                      rs.addHbergement((new SimpleDateFormat("yyyy-MM-dd")).format(dated.getDate()),(new SimpleDateFormat("yyyy-MM-dd")).format(datef.getDate()), hb, SessionManager.getId(),comboModalite.getSelectedItem());
                   } catch (ParseException ex) {
                       System.out.println(ex);
                   }

@@ -31,7 +31,7 @@ import java.util.Map;
  *
  * @author Asus
  */
-public class CalendarForm extends Form {
+public class CalendarForm extends BaseForm {
      private CalendarForm current;
      private Container events;
     public CalendarForm() {
@@ -46,10 +46,11 @@ public class CalendarForm extends Form {
         getToolbar().setUIID("Container");
         Button b = new Button(" ");
         b.setUIID("Container");
+         super.addSideMenu(resourceObjectInstance);
         getToolbar().setTitleComponent(b);
         getTitleArea().setUIID("Container");
           ReservationService rs = new ReservationService();
-         List<Reservation> list=ReservationService.getInstance().getMyReservations(6);
+         List<Reservation> list=ReservationService.getInstance().getMyReservations(SessionManager.getId());
         //installSidemenu(resourceObjectInstance);
        Map<Integer,Container> cntm =new HashMap<>();
              current = this;
@@ -64,7 +65,8 @@ public class CalendarForm extends Form {
             p.pressed(); 
             p.released();
         });
-                cntm.put(r.getId(),createEntry(resourceObjectInstance, true, r.getDate_debut().toString(), r.getDate_fin().toString(), r.getType()));
+            SimpleDateFormat dt1 = new SimpleDateFormat("yyyy-MM-dd");
+                cntm.put(r.getId(),createEntry(resourceObjectInstance, true,dt1.format(r.getDate_debut()).toString(),dt1.format(r.getDate_fin()).toString(), r.getType()));
         //gui_Calendar_1.setCurrentDate(p.getDate());
 //            gui_Calendar_1.setDate(p.getDate());
             gui_Calendar_1.highlightDate(r.getDate_debut(),""+r.getId());
@@ -102,7 +104,7 @@ public class CalendarForm extends Form {
             
          for(Reservation f:list){
             
-                  SimpleDateFormat dt1 = new SimpleDateFormat("yyyyy-MM-dd");
+                  SimpleDateFormat dt1 = new SimpleDateFormat("yyyy-MM-dd");
                   System.out.println(dt1.format(f.getDate_debut()));
                    System.out.println(dt1.format(gui_Calendar_1.getDate()));
           if(dt1.format(f.getDate_debut()).equals(dt1.format(gui_Calendar_1.getDate())))
@@ -122,44 +124,29 @@ public class CalendarForm extends Form {
     }
 
     private Container createEntry(Resources res, boolean selected, String startTime, String endTime, String title) {
-        Component time = new Label(startTime, "CalendarHourUnselected");
-        if(selected) {
-            time.setUIID("CalendarHourSelected");
-        }
+      
         
-        Container circleBox = BoxLayout.encloseY(new Label(res.getImage("label_round-selected.png")),
-                new Label("-", "OrangeLine"),
-                new Label("-", "OrangeLine")
-        );
         
         Container cnt = new Container(BoxLayout.x());
        
         Container mainContent = BoxLayout.encloseY(
-                BoxLayout.encloseX(
-                        new Label("-", "SmallThinLabel"), 
-                        new Label(startTime, "SmallThinLabel"), 
-                        new Label("-", "SmallThinLabel"),
-                        new Label(endTime, "SmallThinLabel")),
+                BoxLayout.encloseX(   new Label("Date Debut :","SmallThinLabel"),
+                        new Label(startTime,"SmallThinLabel"), 
+                        new Label("  Date Fin : ","SmallThinLabel"),
+                        new Label(endTime,"SmallThinLabel")),
+                 new Label(" ","SmallThinLabel"),
                
                 cnt
         );
            Label redLabel = new Label("", "RedLabelRight");
-        FontImage.setMaterialIcon(redLabel, FontImage.MATERIAL_LABEL_IMPORTANT);
         Container loc = BoxLayout.encloseY(
                 redLabel,
                 new Label("Type:", "TinyThinLabelRight"),
                 new Label(title, "TinyBoldLabel")
         );
-   
-    
-        
-        
-        mainContent= BorderLayout.center(mainContent).
-                add(BorderLayout.WEST, circleBox);
-        
         return BorderLayout.center(mainContent).
-                add(BorderLayout.WEST, FlowLayout.encloseCenter(time)).
-                  add(BorderLayout.EAST, loc);
+               
+                  add(BorderLayout.CENTER_BEHAVIOR_CENTER_ABSOLUTE, loc);
                
     }
     

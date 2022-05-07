@@ -16,6 +16,7 @@ import com.codename1.ui.events.ActionListener;
 import com.company.entities.Hebergement;
 import com.company.entities.Paiement;
 import com.company.entities.Reservation;
+import com.company.entities.Vol;
 import com.company.entities.voyageOrganise;
 import com.mycompany.utlis.Statics;
 import static com.mycompany.utlis.Statics.BASE_URL;
@@ -96,7 +97,7 @@ public class ReservationService {
                    java.util.Date parsedr = formatt.parse(e.get("dateReservation").toString());
                           r.setDate_fin(parsedf);
                       r.setDate_reservation(parsedr);
-                     System.out.println(e.get("idHebergement"));
+                     
        }
        catch(ParseException ep)
                {
@@ -126,6 +127,34 @@ public boolean addReservationVoy(int nb , voyageOrganise v, int idc , String mod
        req.addArgument("nbplace",nb+"");
        req.addArgument("idclient",+idc+"");
        req.addArgument("idh",v.getIdVoy()+"");
+       req.addResponseListener(new ActionListener<NetworkEvent>() {
+            @Override
+            public void actionPerformed(NetworkEvent evt) {
+                resultOK = req.getResponseCode() == 200; //Code HTTP 200 OK
+                req.removeResponseListener(this);
+                 val = new String(req.getResponseData());  
+            }
+        });
+        
+        NetworkManager.getInstance().addToQueueAndWait(req);
+        PaiementService ps = new PaiementService();
+               Paiement p = new Paiement(modalite,nb*v.getPrix(),(int) Float.parseFloat(val),null);
+                ps.addPaiement(p);
+        return resultOK;
+    }
+
+public boolean addReservationVol(int nb , Vol v, int idc , String modalite) {
+    
+      
+       //String url = Statics.BASE_URL + "create?name=" + t.getName() + "&status=" + t.getStatus();
+       String url = Statics.BASE_URL + "/reservation/addReservationVol/";
+ 
+       req.setUrl(url);
+       req.setPost(false);
+        System.out.println(url);
+       req.addArgument("nbplace",nb+"");
+       req.addArgument("idclient",+idc+"");
+       req.addArgument("idv",v.getId_vol()+"");
        req.addResponseListener(new ActionListener<NetworkEvent>() {
             @Override
             public void actionPerformed(NetworkEvent evt) {

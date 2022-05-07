@@ -67,8 +67,8 @@ public class BaseForm  extends Form {
         ));
         
         tb.addMaterialCommandToSideMenu("Voyage organise ", FontImage.MATERIAL_UPDATE, e -> {new AfficherVoyageForm(res).show();});
-        tb.addMaterialCommandToSideMenu("Calendar", FontImage.MATERIAL_SETTINGS, e -> {new CalendarForm(res).show();});
+        tb.addMaterialCommandToSideMenu("Calendar", FontImage.MATERIAL_CALENDAR_TODAY, e -> {new CalendarForm(res).show();});
         tb.addMaterialCommandToSideMenu("Hbergement", FontImage.MATERIAL_EXIT_TO_APP, e -> {new ReserverHebergementForm(res).show();});
-         tb.addMaterialCommandToSideMenu("Liste de reservation ", FontImage.MATERIAL_EXIT_TO_APP, e -> {new FormListReservation(res).show();});
+         tb.addMaterialCommandToSideMenu("Liste de reservation ", FontImage.MATERIAL_SHOPPING_CART, e -> {new FormListReservation(res).show();});
     }
 }
