@@ -55,7 +55,7 @@ add(btnajouter);
          Container cnt3= new Container(BoxLayout.y());
         for(Avion p:list){
         Container cnt2= new Container(BoxLayout.x());
-        Label lbi= new Label(res.getImage("r.png"));
+        Label lbi= new Label(res.getImage("f.png"));
         cnt2.add(lbi);
         
          Label Supprimer = new Label(" ");
@@ -67,8 +67,8 @@ add(btnajouter);
         Supprimer.setTextPosition(RIGHT);
       
             
-            Label place=new Label("Nombre de place: "+p.getNbr_place());
-            Label nomavion =new Label("Nom avion:"+ p.getNom_avion());
+            Label place=new Label("Nombre de place : "+p.getNbr_place(), "NewsTopLine2");
+            Label nomavion =new Label("Nom avion : "+ p.getNom_avion(), "NewsTopLine2");
             Button bnt = new Button("Supprimer");
              cnt.addAll(cnt2,place,nomavion,bnt);
               

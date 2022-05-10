@@ -14,7 +14,7 @@ package com.mycompany.entities;
  */
 public class Vol {
     
-    int num_vol,nbr_placedispo;
+    int id_vol,num_vol,nbr_placedispo;
     String ville_depart,ville_arrivee;
     String date_depart,date_arrivee;
     float prix;
@@ -91,6 +91,14 @@ public class Vol {
     @Override
     public String toString() {
         return "Vol{" + "num_vol=" + num_vol + ", nbr_placedispo=" + nbr_placedispo + ", ville_depart=" + ville_depart + ", ville_arrivee=" + ville_arrivee + ", date_depart=" + date_depart + ", date_arrivee=" + date_arrivee + ", prix=" + prix + '}';
+    }
+
+    public int getId_vol() {
+        return id_vol;
+    }
+
+    public void setId_vol(int id_vol) {
+        this.id_vol = id_vol;
     }
 
     

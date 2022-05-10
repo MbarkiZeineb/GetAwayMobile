@@ -6,7 +6,9 @@
     <image name="back.png"  />
     <image name="confirmation-background.jpg"  />
     <image name="dog.jpg"  />
+    <image name="f.png"  />
     <image name="facebook-logo.png" type="multi"  />
+    <image name="ff.png"  />
     <image name="Logo.png" type="multi"  />
     <image name="map-pin.jpg"  />
     <image name="news-item-1.jpg"  />
@@ -21,7 +23,6 @@
     <image name="oublier.png"  />
     <image name="profile-background.jpg"  />
     <image name="profile-pic.jpg" type="multi"  />
-    <image name="r.png"  />
     <image name="reservation.jpg"  />
     <image name="signin-background.jpg"  />
     <image name="signup-background.jpg"  />
