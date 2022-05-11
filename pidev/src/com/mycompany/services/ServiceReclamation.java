@@ -28,10 +28,10 @@ public class ServiceReclamation {
     //singleton 
     public static ServiceReclamation instance = null ;
     
-    public static boolean resultOk = true;
+    public boolean resultOK ;
 
     //initilisation connection request 
-    private ConnectionRequest req;
+    private ConnectionRequest req = new ConnectionRequest();
     
     
     public static ServiceReclamation getInstance() {
@@ -124,16 +124,18 @@ public class ServiceReclamation {
 //    }
 
     public ArrayList<Reclamation> rec;
-     public ArrayList<Reclamation> parseRecs(String jsonText){
+     public ArrayList<Reclamation> parseRecs(String json){
+          ArrayList<Reclamation> rec=new ArrayList<>();
         try {
-            rec=new ArrayList<>();
+         
             JSONParser j = new JSONParser();
             Map<String,Object> RecsListJson = 
-               j.parseJSON(new CharArrayReader(jsonText.toCharArray()));
+               j.parseJSON(new CharArrayReader(json.toCharArray()));
             
             List<Map<String,Object>> list = (List<Map<String,Object>>)RecsListJson.get("root");
             for(Map<String,Object> obj : list){
                 Reclamation r = new Reclamation();
+                r.setIdR((int)Float.parseFloat(obj.get("idr").toString()));
                 if (obj.get("objet")==null)
               r.setObjet("null");
                 else
@@ -155,9 +157,10 @@ public class ServiceReclamation {
     
     public ArrayList<Reclamation> getAllrec(){
         //String url = Statics.BASE_URL+"/tasks/";
-        req=new ConnectionRequest();
+       
         String url = Statics.BASE_URL+"/reclamation/displayReclamations";
-        req.setUrl(url);
+         req=new ConnectionRequest();
+         req.setUrl(url);
         req.setPost(false);
         req.addResponseListener(new ActionListener<NetworkEvent>() {
             @Override
@@ -173,7 +176,24 @@ public class ServiceReclamation {
     
     
     
-    
+     public List<Reclamation> getMyReclam(int id) {
+         req=new ConnectionRequest();
+        String url = Statics.BASE_URL+"/user/getrecbyidc/"+SessionManager.getId();
+        req.setUrl(url);
+       req.setPost(false);
+        System.out.println(url);
+  
+//       req.addArgument("id",+SessionManager.getId()+"");
+        req.addResponseListener(new ActionListener<NetworkEvent>() {
+            @Override
+            public void actionPerformed(NetworkEvent evt) {
+                rec =parseRecs(new String(req.getResponseData()));
+                req.removeResponseListener(this);
+            }
+        });
+        NetworkManager.getInstance().addToQueueAndWait(req);
+        return rec;
+     }
     
     
     
@@ -261,6 +281,24 @@ public class ServiceReclamation {
 //        
 //    }
     
+ public boolean deletereclam(int id){
+           String url= Statics.BASE_URL+"/reclamation/DeleteReclam/"+id;
+        req.setUrl(url);
+      
+        System.out.println(url);
+        req.addResponseListener(new ActionListener<NetworkEvent>() {
+            
+            @Override
+            public void actionPerformed(NetworkEvent evt) {
+                                req.removeResponseListener(this);
 
+                
+            }
+        });
+        NetworkManager.getInstance().addToQueueAndWait(req);
+        return resultOK;
+           
+           
+       }
     
 }

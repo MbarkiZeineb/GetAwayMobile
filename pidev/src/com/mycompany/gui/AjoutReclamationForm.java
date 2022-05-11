@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package com.mycompany.gui;
-
+import com.codename1.ui.util.Resources;
 import com.codename1.components.InfiniteProgress;
 import com.codename1.components.ScaleImageLabel;
 import com.codename1.components.SpanLabel;
@@ -158,7 +158,7 @@ public class AjoutReclamationForm extends BaseForm {
         addStringValue("", btnAjouter);
         
          Button btnlistRec = new Button("Liste des reclamations");
-         btnlistRec.addActionListener(e->new ListReclamationForm(current).show());
+         btnlistRec.addActionListener(e->new ListReclamationForm(res).show());
           add(btnlistRec);
          
         //onclick button event 

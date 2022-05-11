@@ -87,6 +87,11 @@ public class Reclamation {
     public void setEtat(int etat) {
         this.etat = etat;
     }
+
+    @Override
+    public String toString() {
+        return "Reclamation{" + "idR=" + idR + ", idC=" + idC + ", objet=" + objet + ", description=" + description + ", etat=" + etat + '}';
+    }
     
     
     
