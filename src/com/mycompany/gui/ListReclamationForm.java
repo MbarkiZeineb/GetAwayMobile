@@ -92,10 +92,12 @@ public class ListReclamationForm  extends BaseForm {
                
                  bnt.addPointerReleasedListener(l -> {
             
-           
+                           System.out.println(p.getIdR());
                              
                             if(ServiceReclamation.getInstance().deletereclam(p.getIdR())) {
-                                  ToastBar.showInfoMessage("Reclamation est supprime").show();
+                                System.out.println("aaaaaaaaaaaaaa");
+                                 ToastBar.showInfoMessage("Reclamation est supprime").show();
+                                  
                                new ListReclamationForm(res).show();                    
                           }
                             

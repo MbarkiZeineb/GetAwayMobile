@@ -51,18 +51,27 @@ public class ServiceReclamation {
     //ajout 
     public void ajoutReclamation(Reclamation reclamation) {
         
-        String url =Statics.BASE_URL+"/reclamation/addRecJson?objet="+reclamation.getObjet()+"&description="+reclamation.getDescription()+"&idclient="+reclamation.getIdC(); // aa sorry n3adi getId lyheya mech ta3 user ta3 reclamation
-        
-        req.setUrl(url);
-        req.addResponseListener((e) -> {
-            
-            String str = new String(req.getResponseData());//Reponse json hethi lyrinaha fi navigateur 9bila
-            System.out.println("data == "+str);
+        String url =Statics.BASE_URL+"/reclamation/addRecmobile";
+         req.setUrl(url);
+       req.setPost(false);
+        System.out.println(url);
+       req.addArgument("objet",reclamation.getObjet());
+       req.addArgument("description",reclamation.getDescription());
+         req.addArgument("idclient",reclamation.getIdC()+"");
+       System.out.println(req);
+       req.addResponseListener(new ActionListener<NetworkEvent>() {
+            @Override
+            public void actionPerformed(NetworkEvent evt) {
+                resultOK = req.getResponseCode() == 200; //Code HTTP 200 OK
+                req.removeResponseListener(this);
+            }
         });
         
-        NetworkManager.getInstance().addToQueueAndWait(req);//execution ta3 request sinon yet3ada chy dima nal9awha
-        
+        NetworkManager.getInstance().addToQueueAndWait(req);
+       
+      
     }
+    
     
     
 //    //affichage
@@ -178,9 +187,11 @@ public class ServiceReclamation {
     
      public List<Reclamation> getMyReclam(int id) {
          req=new ConnectionRequest();
-        String url = Statics.BASE_URL+"/user/getrecbyidc/"+SessionManager.getId();
+        String url = Statics.BASE_URL+"/user/getrecbyidc";
+        
         req.setUrl(url);
        req.setPost(false);
+          req.addArgument("idc",""+id);
         System.out.println(url);
   
 //       req.addArgument("id",+SessionManager.getId()+"");
@@ -296,6 +307,8 @@ public class ServiceReclamation {
             }
         });
         NetworkManager.getInstance().addToQueueAndWait(req);
+        
+        System.out.println(resultOK);
         return resultOK;
            
            

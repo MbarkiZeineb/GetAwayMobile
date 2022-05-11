@@ -196,6 +196,7 @@ public class AjoutReclamationForm extends BaseForm {
                     
                     
                     refreshTheme();//Actualisation
+                     new ListReclamationForm(res).show();   
                             
                 }
                 

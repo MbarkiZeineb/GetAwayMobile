@@ -101,7 +101,7 @@ public class ActivateForm extends BaseForm {
             
             final Dialog ipDialog =  ip.showInfiniteBlocking();
             
-            //houni bch nzido API SEND MAIL autrement bch n3ayto lel function ta3o mais 9bal njibo image oublier.png
+            ///houni bch nzido API SEND MAIL autrement bch n3ayto lel function ta3o mais 9bal njibo image oublier.png
             
             sendMail(res);
             ipDialog.dispose();
