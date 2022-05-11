@@ -54,7 +54,7 @@ public class CustomComboBox {
             for (Object loisir : response) {
 
                 ObjectMapper oMapper = new ObjectMapper();
-                Map<String, Object> myObjMap = oMapper.convertValue(loisir, Map.class);
+                Map<String, Object> myObjMap = oMapper.convertValue(loisir,Map.class);
                 // accessing each element of array
                 Map<String, Object> obj = createListEntry(myObjMap.get(titleField).toString(), myObjMap.get(descField).toString());
                 theBox.uniqueId.add((new Double((double) myObjMap.get(uniqueField)).intValue()));

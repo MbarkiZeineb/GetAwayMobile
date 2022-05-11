@@ -47,6 +47,7 @@ public class AjoutReclamationForm extends BaseForm {
         Toolbar tb = new Toolbar(true);
         current = this ;
         setToolbar(tb);
+        super.addSideMenu(res);
         getTitleArea().setUIID("Container");
         setTitle("Ajout Reclamation");
         getContentPane().setScrollVisible(false);

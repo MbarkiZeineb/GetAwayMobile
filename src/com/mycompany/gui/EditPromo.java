@@ -56,15 +56,15 @@ public class EditPromo extends BaseForm {
         btnModifier.setUIID("Button");
 
         //Event onclick btnModifer
+        
+   
+        
         btnModifier.addPointerPressedListener(l -> {
-            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-            Promostion pr = new Promostion(
-                    r.getIdRef(),
-                    Integer.parseInt(pourcentage.getText()),
-                    format.format(dateStart.getDate()),
-                    format.format(dateEnd.getDate()),
-                    r.getRefHebergement()
-            );
+                 r.setPourcentage((int)Float.parseFloat(pourcentage.getText())); 
+        r.setDateStart(dateStart.getText());
+        r.setDateEnd(dateEnd.getText());
+           
+         
             ServicePromo.getInstance().editPromo(r.getIdRef(), r);
             new ShowPromo(res).show();
         });

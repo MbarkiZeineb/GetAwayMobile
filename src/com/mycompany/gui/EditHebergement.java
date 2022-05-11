@@ -77,10 +77,28 @@ public class EditHebergement extends BaseForm {
 
         Button btnModifier = new Button("Modifier");
         btnModifier.setUIID("Button");
-
+         
+          
         //Event onclick btnModifer
         btnModifier.addPointerPressedListener(l -> {
-            ServiceHebergement.getInstance().editCategory(r.getReference(), r);
+          r.setPaye(pays.getText());
+          
+          r.setAdress(adress.getText());
+          
+          r.setPrix((int)Float.parseFloat(prix.getText()));
+          
+          r.setDescription(description.getText());
+          
+         // r.setAdress(photo.getText());
+          r.setDateStart(dateStart.getText());
+            r.setDateEnd(dateEnd.getText());
+           r.setContact((int)Float.parseFloat(contact.getText()));
+           r.setNbrDetoile((int)Float.parseFloat(nbrDetoile.getText()));
+           r.setNbrParking((int)Float.parseFloat(nbrParking.getText()));
+           r.setNbrSuite((int)Float.parseFloat(nbrSuite.getText())); 
+           r.setModelCaravane(modelCaravane.getText());
+          
+            ServiceHebergement.getInstance().editCategory(r.getReference(),r);
             new ShowHebergement(res).show();
         });
         Button btnAnnuler = new Button("Cancel");

@@ -88,7 +88,8 @@ public class ServiceHebergement {
     }
 
     public void editCategory(int id, Hebergement heb) {
-        String url = Statics.BASE_URL + "/hebergement/mobile/edit?reference=" + id
+        System.out.println(heb);
+        String url = Statics.BASE_URL + "/hebergement/mobile/edit?reference=" + heb.getReference()
                 + "&paye=" + heb.getPaye()
                 + "&adress=" + heb.getAdress()
                 + "&prix=" + heb.getPrix()
@@ -112,7 +113,7 @@ public class ServiceHebergement {
     }
 
     public boolean deleteCategory(int id) {
-        String url = Statics.BASE_URL + "/hebergement/mobile/delete?reference=" + id;
+         String url = Statics.BASE_URL + "/hebergement/mobile/delete?reference=" + id;
         System.out.println(url);
         req.setUrl(url);
         req.setPost(false);

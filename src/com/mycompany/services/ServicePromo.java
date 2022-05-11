@@ -79,6 +79,7 @@ public class ServicePromo {
     }
 
     public void editPromo(int id, Promostion heb) {
+        System.out.println(heb);
         String url = Statics.BASE_URL + "/promostion/mobile/edit?idRef=" + id
                 + "&pourcentage=" + heb.getPourcentage()
                 + "&dateStart=" + heb.getDateStart()

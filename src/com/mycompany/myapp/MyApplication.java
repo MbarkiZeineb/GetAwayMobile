@@ -69,6 +69,7 @@ public class MyApplication {
     }
     
     public void destroy() {
+        
     }
 
 }

@@ -53,7 +53,7 @@ public class ListReclamationForm  extends BaseForm {
 //        SpanLabel sp = new SpanLabel();
 //        sp.setText(ReservationService.getInstance().getMyReservations().toString());
 //        add(sp);
- 
+  super.addSideMenu(res);
          setTitle("Liste Des reclamations ");
         setLayout(BoxLayout.y());
           Container cnt= new Container(BoxLayout.y());

@@ -81,9 +81,10 @@ public class BaseForm extends Form {
                 FlowLayout.encloseCenterBottom(
                 new Label(res.getImage("profile-pic.jpg"), "PictureWhiteBackgrond"))
         ));
-        
-        tb.addMaterialCommandToSideMenu("Newsfeed", FontImage.MATERIAL_UPDATE, e -> new NewsfeedForm(res).show());
-        tb.addMaterialCommandToSideMenu("Profile", FontImage.MATERIAL_SETTINGS, e -> new ProfileForm(res).show());
+ 
+        tb.addMaterialCommandToSideMenu("Promo", FontImage.MATERIAL_UPDATE, e -> new ShowPromo(res).show());
+        tb.addMaterialCommandToSideMenu("Category", FontImage.MATERIAL_UPDATE, e -> new ShowCategory(res).show());
+        tb.addMaterialCommandToSideMenu("Hebergement", FontImage.MATERIAL_SETTINGS, e -> new ShowHebergement(res).show());
         tb.addMaterialCommandToSideMenu("Logout", FontImage.MATERIAL_EXIT_TO_APP, e -> new WalkthruForm(res).show());
        
     }
