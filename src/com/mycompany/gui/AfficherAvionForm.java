@@ -34,7 +34,7 @@ import static jdk.nashorn.internal.runtime.Debug.id;
  *
  * @author Malek
  */
-public class AfficherAvionForm extends Form{
+public class AfficherAvionForm extends BaseAgent{
     Form current;
      public AfficherAvionForm(Resources res) {
          Button btnajouter = new Button("Ajouter avion");
@@ -50,7 +50,7 @@ add(btnajouter);
            
 
         current = this ;
-        //super.addSideMenu(res);
+        super.addSideMenu(res);
          System.out.println(SessionManager.getId());
          List<Avion> list=AvionService.getInstance().getMyavions(SessionManager.getId());
          Container cnt3= new Container(BoxLayout.y());

@@ -59,7 +59,9 @@ public class ReserverVoyageOForm   extends BaseForm {
    ComboBox<String> comboModalite= new ComboBox<String>("","Cache" ,"Cheque","Carte bancaire");
      Button btnreservervoy = new Button("reserver");
     Container cnt;
-        cnt = BoxLayout.encloseY(
+       Label lbi= new Label(res.getImage("reservation.jpg"));
+        
+        cnt = BoxLayout.encloseY(lbi,
                 tnbreplace,createStatusBar(), comboModalite,createStatusBar(),btnreservervoy,createStatusBar()
         );
            cnt.setScrollableY(true);

@@ -50,7 +50,7 @@ public class SignInForm extends BaseForm {
         getTitleArea().setUIID("Container");
         setUIID("SignIn");
         
-        
+         add(BorderLayout.CENTER, new Label(res.getImage("Logo1.png")));
         TextField email = new TextField("", "email", 20, TextField.ANY);
         TextField password = new TextField("", "Password", 20, TextField.PASSWORD);
         email.setSingleLineTextArea(false);

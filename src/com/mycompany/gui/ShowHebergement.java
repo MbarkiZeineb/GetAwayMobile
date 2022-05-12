@@ -46,7 +46,7 @@ import java.util.ArrayList;
  *
  * @author louay
  */
-public class ShowHebergement extends BaseForm {
+public class ShowHebergement extends BaseFormOff {
 
     Form current;
 
@@ -150,7 +150,7 @@ public class ShowHebergement extends BaseForm {
             updateArrowPosition(barGroup.getRadioButton(barGroup.getSelectedIndex()), arrow);
         });
 
-        ArrayList< Hebergement> list = ServiceHebergement.getInstance().affichageHebergements();
+        ArrayList< Hebergement> list = ServiceHebergement.getInstance().affichageHebergementsOffreur(SessionManager.getId());
 
         for (Hebergement rec : list) {
 

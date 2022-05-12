@@ -191,6 +191,7 @@ public class ServiceReclamation {
         
         req.setUrl(url);
        req.setPost(false);
+         System.out.println(id);
           req.addArgument("idc",""+id);
         System.out.println(url);
   

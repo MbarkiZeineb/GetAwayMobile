@@ -31,7 +31,7 @@ public class ServiceHebergement {
     public ArrayList<Hebergement> Categories;
     private MultipartRequest request;
 
-    private final ConnectionRequest req;
+    private ConnectionRequest req;
 
     public static ServiceHebergement getInstance() {
         if (instance == null) {
@@ -59,7 +59,8 @@ public class ServiceHebergement {
                     + "&nbrSuite=" + heb.getNbrSuite()
                     + "&nbrParking=" + heb.getNbrParking()
                     + "&modelCaravane=" + heb.getModelCaravane()
-                    + "&idCateg=" + heb.getIdCateg();
+                    + "&idCateg=" + heb.getIdCateg()
+                          + "&ido=" + heb.getOffreur();;
             System.out.println(url);
             req.setPost(true);
 
@@ -102,6 +103,7 @@ public class ServiceHebergement {
                 + "&nbrSuite=" + heb.getNbrSuite()
                 + "&nbrParking=" + heb.getNbrParking()
                 + "&modelCaravane=" + heb.getModelCaravane();
+          
         System.out.println(url);
         req.setUrl(url);
         req.addResponseListener((e) -> {
@@ -163,6 +165,7 @@ public class ServiceHebergement {
                 cat.setDateStart(item.get("dateStart").toString());
                 cat.setDateEnd(item.get("dateEnd").toString());
                 cat.setModelCaravane(item.get("modelCaravane").toString());
+             
                 Categories.add(cat);
             }
         } catch (IOException | NumberFormatException ex) {
@@ -172,32 +175,42 @@ public class ServiceHebergement {
         return Categories;
 
     }
-
-    public ArrayList<Hebergement> affichageHebergements() {
-        request = new MultipartRequest();
-        String url = Statics.BASE_URL + "/hebergement/mobile/getAll";
-        request.setUrl(url);
-        System.out.println("hello2");
-
-        request.addResponseListener(new ActionListener<NetworkEvent>() {
+    
+    public ArrayList<Hebergement> affichageHebergementsOffreur(int id) {
+           req=new ConnectionRequest();
+                String url = Statics.BASE_URL+"/user/gethebbyido/"+id;
+        req.setUrl(url);
+       req.setPost(false);
+        System.out.println(url);
+  
+      
+        req.addResponseListener(new ActionListener<NetworkEvent>() {
             @Override
             public void actionPerformed(NetworkEvent evt) {
-                try {
-                    System.out.println("hello3");
-
-                    String dataaa = new String(request.getResponseData(), "utf-8");
-                    System.out.println("our dataaa " + dataaa);
-                    Categories = parse(dataaa);
-                    request.removeResponseListener(this);
-                } catch (Exception ex) {
-
-                }
+                Categories =parse(new String(req.getResponseData()));
+                req.removeResponseListener(this);
             }
-
         });
-        System.out.println("hello4");
+        NetworkManager.getInstance().addToQueueAndWait(req);
+        return  Categories;
+    }
 
-        NetworkManager.getInstance().addToQueueAndWait(request);
-        return Categories;
+    public ArrayList<Hebergement> affichageHebergements() {
+               req=new ConnectionRequest();
+               String url = Statics.BASE_URL + "/hebergement/mobile/getAll";
+        req.setUrl(url);
+       req.setPost(false);
+        System.out.println(url);
+  
+      
+        req.addResponseListener(new ActionListener<NetworkEvent>() {
+            @Override
+            public void actionPerformed(NetworkEvent evt) {
+                Categories =parse(new String(req.getResponseData()));
+                req.removeResponseListener(this);
+            }
+        });
+        NetworkManager.getInstance().addToQueueAndWait(req);
+        return  Categories;
     }
 }

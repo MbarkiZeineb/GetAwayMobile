@@ -69,7 +69,7 @@ public class Hebergement {
         this.modelCaravane = modelCaravane;
     }
 
-    public Hebergement(String paye, String adress, float prix, String description, String photo, String dateStart, String dateEnd, int contact, int nbrDetoile, int nbrSuite, int nbrParking, String modelCaravane, int idCateg) {
+    public Hebergement(String paye, String adress, float prix, String description, String photo, String dateStart, String dateEnd, int contact, int nbrDetoile, int nbrSuite, int nbrParking, String modelCaravane, int idCateg,int off) {
         this.paye = paye;
         this.adress = adress;
         this.prix = prix;
@@ -83,6 +83,7 @@ public class Hebergement {
         this.nbrParking = nbrParking;
         this.modelCaravane = modelCaravane;
         this.idCateg = idCateg;
+        this.offreur=off;
     }
 
     public int getReference() {

@@ -41,7 +41,7 @@ import java.util.ArrayList;
  *
  * @author louay
  */
-public class ShowCategory extends BaseForm {
+public class ShowCategory  extends BaseFormOff {
 
     Form current;
 

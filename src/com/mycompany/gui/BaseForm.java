@@ -75,23 +75,17 @@ public class BaseForm extends Form {
      ScaleImageLabel sl = new ScaleImageLabel(img);
      sl.setUIID("BottomPad");
      sl.setBackgroundType(Style.BACKGROUND_IMAGE_SCALED_FILL);
-        
-   tb.addComponentToSideMenu(LayeredLayout.encloseIn(
-        sl,
-                FlowLayout.encloseCenterBottom(
-                new Label(res.getImage("profile-pic.jpg"), "PictureWhiteBackgrond"))
-        ));
- 
-        tb.addMaterialCommandToSideMenu("Promo", FontImage.MATERIAL_WORK_OUTLINE, e -> new ShowPromo(res).show());
-        tb.addMaterialCommandToSideMenu("Category", FontImage.MATERIAL_UPDATE, e -> new ShowCategory(res).show());
-        //tb.addMaterialCommandToSideMenu("Hebergement", FontImage.MATERIAL_SETTINGS, e -> new ShowHebergement(res).show());
-        tb.addMaterialCommandToSideMenu("Logout", FontImage.MATERIAL_EXIT_TO_APP, e -> new WalkthruForm(res).show());
-        tb.addMaterialCommandToSideMenu("Calendar", FontImage.MATERIAL_CALENDAR_TODAY, e -> {new CalendarForm(res).show();});
- tb.addMaterialCommandToSideMenu("Hebergement", FontImage.MATERIAL_EXIT_TO_APP, e -> {new AfficherHbergementClientForm(res).show();});
-         tb.addMaterialCommandToSideMenu("Liste de reservation ", FontImage.MATERIAL_SHOPPING_CART, e -> {new FormListReservation(res).show();});
-          tb.addMaterialCommandToSideMenu(" Vol ", FontImage.MATERIAL_SHOPPING_CART, e -> {new AfficherVolForm(res,0).show();});
-             tb.addMaterialCommandToSideMenu("Avis ", FontImage.MATERIAL_UPDATE, e -> {new AfficherAvisForm(res).show();});
-        tb.addMaterialCommandToSideMenu("Activite ", FontImage.MATERIAL_UPDATE, e -> {new AfficherActiviteForm(res).show();});
+      
+       tb.addMaterialCommandToSideMenu("Voyage organise ", FontImage.MATERIAL_TRIP_ORIGIN, e -> new AfficherVoyageForm(res).show());
+         tb.addMaterialCommandToSideMenu(" Reserver Voyage organise ", FontImage.MATERIAL_AIRPLANE_TICKET, e -> new AfficherVoyageClient(res).show());
+           tb.addMaterialCommandToSideMenu("Liste de reservation ", FontImage.MATERIAL_SHOPPING_CART, e -> {new FormListReservation(res).show();});
+ tb.addMaterialCommandToSideMenu("Hebergement", FontImage.MATERIAL_HOLIDAY_VILLAGE, e -> {new AfficherHbergementClientForm(res).show();});
+        tb.addMaterialCommandToSideMenu(" Vol ", FontImage.MATERIAL_AIRPLANEMODE_ON, e -> {new AfficherVolForm(res,0).show();});
+         tb.addMaterialCommandToSideMenu("Activite ", FontImage.MATERIAL_SPORTS_BASEBALL, e -> {new AfficherActiviteForm(res).show();});
+             tb.addMaterialCommandToSideMenu("Avis ", FontImage.MATERIAL_COMMENT, e -> {new AfficherAvisForm(res).show();});
        
+          tb.addMaterialCommandToSideMenu("Espace reclamation ", FontImage.MATERIAL_COMMENT, e -> {new AjoutReclamationForm(res).show();}); 
+          tb.addMaterialCommandToSideMenu("Calendar", FontImage.MATERIAL_CALENDAR_TODAY, e -> {new CalendarForm(res).show();});
+         tb.addMaterialCommandToSideMenu("Logout", FontImage.MATERIAL_EXIT_TO_APP, e -> new WalkthruForm(res).show());
     }
 }

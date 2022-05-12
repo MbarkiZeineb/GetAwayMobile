@@ -38,11 +38,26 @@ public class AfficherActiviteForm extends BaseForm{
  Form current;
     public AfficherActiviteForm(Resources res) {
  
+              Button show = new Button("Etat des Activites");
          setTitle("Liste des Activites");
               setLayout(BoxLayout.y());
          Container cnt= new Container(BoxLayout.y());
          
-            
+             
+         Container cnt4 =new Container(BoxLayout.xCenter());
+        
+         
+         ActiviteService as = new ActiviteService();
+          cnt4.add(show);
+          add(cnt4);
+         
+         show.addActionListener(new ActionListener() {
+    public void actionPerformed(ActionEvent evt) {
+        as.help();
+        System.out.println(as.getHelmessage());
+      Dialog.show("Etat des activites",as.getHelmessage(),"","OK");
+    }
+});
           current = this ;
           super.addSideMenu(res);
          List<Activite> list=ActiviteService.getInstance().getMyactivite();

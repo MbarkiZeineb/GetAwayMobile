@@ -82,7 +82,7 @@ public class AfficherHbergementClientForm extends BaseForm{
        
 
         ArrayList< Hebergement> list = ServiceHebergement.getInstance().affichageHebergements();
-
+        System.out.println(list);
         for (Hebergement rec : list) {
 
             addButton(rec, res);

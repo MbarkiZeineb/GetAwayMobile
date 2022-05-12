@@ -17,6 +17,7 @@ import com.mycompany.gui.AfficherAvionForm;
 import com.mycompany.gui.AjoutReclamationForm;
 import com.mycompany.gui.FormListReservation;
 import com.mycompany.gui.SessionManager;
+import com.mycompany.gui.ShowHebergement;
 import com.mycompany.utils.Statics;
 import java.util.Map;
 
@@ -98,8 +99,10 @@ public class ServiceUser {
                     { System.out.println(SessionManager.getRole());
                         if (SessionManager.getRole().equals("Agent-Aerien")) 
                             new AfficherAvionForm(rs).show();
-                         else
+                        else if(SessionManager.getRole().equals("Client"))
                             new FormListReservation(rs).show();
+                         if (SessionManager.getRole().equals("Offreur")) 
+                            new  ShowHebergement(rs).show();
                         
                     }
 

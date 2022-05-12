@@ -44,7 +44,7 @@ import java.text.SimpleDateFormat;
  *
  * @author louay
  */
-public class AddHebergement extends BaseForm {
+public class AddHebergement extends BaseFormOff {
 
     Form current;
 
@@ -233,7 +233,7 @@ public class AddHebergement extends BaseForm {
                             Integer.parseInt(nbrSuite.getText()),
                             Integer.parseInt(nbrParking.getText()),
                             modelCaravane.getText(),
-                            CategorieBox.getSelected().uniqueId
+                            CategorieBox.getSelected().uniqueId,SessionManager.getId()
                     );
 
                     ServiceHebergement.getInstance().addHeb(r);

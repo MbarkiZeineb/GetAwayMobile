@@ -43,7 +43,7 @@ import java.util.ArrayList;
  *
  * @author louay
  */
-public class ShowPromo extends BaseForm {
+public class ShowPromo  extends BaseFormOff {
 
     Form current;
 

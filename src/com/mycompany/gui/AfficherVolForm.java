@@ -34,7 +34,7 @@ import java.util.List;
  *
  * @author Malek
  */
-public class AfficherVolForm extends Form{
+public class AfficherVolForm extends BaseForm{
  Form current;
  int i=0;
     public AfficherVolForm(Resources res,int test) {
@@ -42,6 +42,7 @@ public class AfficherVolForm extends Form{
          setTitle("Liste Des vols");
               setLayout(BoxLayout.y());
          Container cnt= new Container(BoxLayout.y());
+         super.addSideMenu(res);
          Button btnmap = new Button("map");
              add(btnmap);
             btnmap.addActionListener((evt) -> {
@@ -65,6 +66,7 @@ public class AfficherVolForm extends Form{
          
           
           current = this ;
+          
           if(i==0)
           {List<Vol> list=VolService.getInstance().getMyvols();
           

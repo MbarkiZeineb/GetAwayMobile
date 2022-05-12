@@ -20,8 +20,10 @@ import com.codename1.ui.layouts.FlowLayout;
 import com.codename1.ui.spinner.Picker;
 import com.codename1.ui.util.Resources;
 import com.mycompany.entities.Hebergement;
+import com.mycompany.entities.Reservation;
 import com.mycompany.entities.voyageOrganise;
 import com.mycompany.services.ReservationService;
+import java.util.Date;
 import javafx.scene.control.DatePicker;
 
 /**
@@ -31,7 +33,7 @@ import javafx.scene.control.DatePicker;
 public class ReserverHebergementForm extends BaseForm {
 ReservationService rs = new ReservationService();
     public ReserverHebergementForm(Resources res , Hebergement heb) {
-     
+    
      super("Ajouter",new FlowLayout(CENTER, CENTER));
     setTitle("Reservation Hebeergement");
      int id=15;
@@ -44,8 +46,10 @@ ReservationService rs = new ReservationService();
       cnt.addAll(dated,datef,comboModalite,btnreserverH);
       
       btnreserverH.addActionListener(
-       e->{
-               
+       e->{ 
+           
+      
+         
               rs.verfierDatedispo((new SimpleDateFormat("yyyy-MM-dd")).format(dated.getDate()),(new SimpleDateFormat("yyyy-MM-dd")).format(datef.getDate()),heb.getReference());
              String test= rs.testhebergement;
              if(test.equals("true"))
@@ -64,6 +68,7 @@ ReservationService rs = new ReservationService();
              }
        
        }
+            
       );
       
         add( cnt);
