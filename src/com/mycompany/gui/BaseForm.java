@@ -90,6 +90,8 @@ public class BaseForm extends Form {
  tb.addMaterialCommandToSideMenu("Hebergement", FontImage.MATERIAL_EXIT_TO_APP, e -> {new AfficherHbergementClientForm(res).show();});
          tb.addMaterialCommandToSideMenu("Liste de reservation ", FontImage.MATERIAL_SHOPPING_CART, e -> {new FormListReservation(res).show();});
           tb.addMaterialCommandToSideMenu(" Vol ", FontImage.MATERIAL_SHOPPING_CART, e -> {new AfficherVolForm(res,0).show();});
+             tb.addMaterialCommandToSideMenu("Avis ", FontImage.MATERIAL_UPDATE, e -> {new AfficherAvisForm(res).show();});
+        tb.addMaterialCommandToSideMenu("Activite ", FontImage.MATERIAL_UPDATE, e -> {new AfficherActiviteForm(res).show();});
        
     }
 }
