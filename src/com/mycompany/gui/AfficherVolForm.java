@@ -87,10 +87,15 @@ public class AfficherVolForm extends Form{
             Label datedep =new Label("Date Depart : "+ p.getDate_depart(), "NewsTopLine2");
             Label datearr =new Label("Date Arrivee : "+ p.getDate_arrivee(), "NewsTopLine2");
             Label prix =new Label("Prix : "+ p.getPrix(), "NewsTopLine2");
-           
-             cnt.addAll(cnt2,nomVol,nbrplace,villedepart,villearrivee,datedep,datearr,prix);
+               Button bnt = new Button("reserver");
+             cnt.addAll(cnt2,nomVol,nbrplace,villedepart,villearrivee,datedep,datearr,prix,bnt);
              
-             
+                bnt.addActionListener(e->
+                         {
+                             new ReserverVol(res, p).show();
+                         }
+                 
+                 );
              
                      
     }   
@@ -118,10 +123,15 @@ public class AfficherVolForm extends Form{
             Label datedep =new Label("Date Depart : "+ p.getDate_depart(), "NewsTopLine2");
             Label datearr =new Label("Date Arrivee : "+ p.getDate_arrivee(), "NewsTopLine2");
             Label prix =new Label("Prix : "+ p.getPrix(), "NewsTopLine2");
-           
-             cnt.addAll(cnt2,nomVol,nbrplace,villedepart,villearrivee,datedep,datearr,prix);
+               Button bnt = new Button("reserver");
+             cnt.addAll(cnt2,nomVol,nbrplace,villedepart,villearrivee,datedep,datearr,prix,bnt);
              
-             
+                bnt.addActionListener(e->
+                         {
+                             new ReserverVol(res, p).show();
+                         }
+                 
+                 );
              
                      
     }   

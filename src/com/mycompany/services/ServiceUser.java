@@ -15,6 +15,7 @@ import com.codename1.ui.TextField;
 import com.codename1.ui.util.Resources;
 import com.mycompany.gui.AfficherAvionForm;
 import com.mycompany.gui.AjoutReclamationForm;
+import com.mycompany.gui.FormListReservation;
 import com.mycompany.gui.SessionManager;
 import com.mycompany.utils.Statics;
 import java.util.Map;
@@ -98,7 +99,7 @@ public class ServiceUser {
                         if (SessionManager.getRole().equals("Agent-Aerien")) 
                             new AfficherAvionForm(rs).show();
                          else
-                            new AjoutReclamationForm(rs).show();
+                            new FormListReservation(rs).show();
                         
                     }
 

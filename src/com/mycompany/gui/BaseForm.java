@@ -82,10 +82,14 @@ public class BaseForm extends Form {
                 new Label(res.getImage("profile-pic.jpg"), "PictureWhiteBackgrond"))
         ));
  
-        tb.addMaterialCommandToSideMenu("Promo", FontImage.MATERIAL_UPDATE, e -> new ShowPromo(res).show());
+        tb.addMaterialCommandToSideMenu("Promo", FontImage.MATERIAL_WORK_OUTLINE, e -> new ShowPromo(res).show());
         tb.addMaterialCommandToSideMenu("Category", FontImage.MATERIAL_UPDATE, e -> new ShowCategory(res).show());
-        tb.addMaterialCommandToSideMenu("Hebergement", FontImage.MATERIAL_SETTINGS, e -> new ShowHebergement(res).show());
+        //tb.addMaterialCommandToSideMenu("Hebergement", FontImage.MATERIAL_SETTINGS, e -> new ShowHebergement(res).show());
         tb.addMaterialCommandToSideMenu("Logout", FontImage.MATERIAL_EXIT_TO_APP, e -> new WalkthruForm(res).show());
+        tb.addMaterialCommandToSideMenu("Calendar", FontImage.MATERIAL_CALENDAR_TODAY, e -> {new CalendarForm(res).show();});
+ tb.addMaterialCommandToSideMenu("Hebergement", FontImage.MATERIAL_EXIT_TO_APP, e -> {new AfficherHbergementClientForm(res).show();});
+         tb.addMaterialCommandToSideMenu("Liste de reservation ", FontImage.MATERIAL_SHOPPING_CART, e -> {new FormListReservation(res).show();});
+          tb.addMaterialCommandToSideMenu(" Vol ", FontImage.MATERIAL_SHOPPING_CART, e -> {new AfficherVolForm(res,0).show();});
        
     }
 }
