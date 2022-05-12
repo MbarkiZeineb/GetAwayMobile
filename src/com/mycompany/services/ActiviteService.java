@@ -29,7 +29,8 @@ public class ActiviteService {
     
      public ArrayList<Activite> act;
        public static boolean resultOk = true;
-    
+    public static String val="";
+     public static String helmessage="";
     public static  ActiviteService instance=null;
     public boolean resultOK;
     private ConnectionRequest req;
@@ -45,11 +46,39 @@ public class ActiviteService {
         return instance;
     }
 
+    public static String getHelmessage() {
+        return helmessage;
+    }
+
+    
+    public boolean help(){
+        
+        req=new ConnectionRequest();
+        String url = Statics.BASE_URL+"/activite/help";
+        req.setUrl(url);
+        
+        req.addResponseListener(new ActionListener<NetworkEvent>() {
+            @Override
+            public void actionPerformed(NetworkEvent evt) {
+                    
+                resultOK = req.getResponseCode() == 200; //Code HTTP 200 OK
+                req.removeResponseListener(this);
+                 val = new String(req.getResponseData());
+                   
+            }
+        });
+        NetworkManager.getInstance().addToQueueAndWait(req);
+        helmessage=new String(req.getResponseData());
+        System.out.println(helmessage+"aaaa");
+        return resultOk;
+    }
+    
 
   public List<Activite> getMyactivite() {
          req=new ConnectionRequest();
         String url = Statics.BASE_URL+"/activite/actgetting";
         req.setUrl(url);
+        
         req.setPost(false);
         req.addResponseListener(new ActionListener<NetworkEvent>() {
             @Override
@@ -74,6 +103,7 @@ public class ActiviteService {
             for(Map<String,Object> e : list){
                 
                 Activite a = new Activite();
+                a.setRefAct((int)Float.parseFloat(e.get("refact").toString()));
                 a.setNom(e.get("nom").toString());
                 a.setDescrip(e.get("descrip").toString());
                 a.setDuree(e.get("duree").toString());
@@ -102,4 +132,3 @@ public class ActiviteService {
    
     
 }
-

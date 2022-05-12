@@ -38,11 +38,7 @@ import static jdk.nashorn.internal.runtime.Debug.id;
 public class AfficherAvisForm extends BaseForm{
     Form current;
      public AfficherAvisForm(Resources res) {
-         Button btnajouter = new Button("Ajouter Avis");
-add(btnajouter);
- btnajouter.addActionListener((e) -> {
-            new AjouterAvis(res).show();
-        });
+
  
          setTitle("Liste de vos avis ");
               setLayout(BoxLayout.y());
@@ -52,8 +48,9 @@ add(btnajouter);
 
         current = this ;
         super.addSideMenu(res);
-         List<Avis> list=AvisService.getInstance().getMyavis();
+         List<Avis> list=AvisService.getInstance().getMyavis(SessionManager.getId());
          Container cnt3= new Container(BoxLayout.y());
+        
         for(Avis av:list){
         Container cnt2= new Container(BoxLayout.x());
         Label lbi= new Label(res.getImage("avis.png"));
@@ -66,7 +63,7 @@ add(btnajouter);
         FontImage suprrimerImage = FontImage.createMaterial(FontImage.MATERIAL_DELETE, supprmierStyle);
         Supprimer.setIcon(suprrimerImage);
         Supprimer.setTextPosition(RIGHT);
-      
+          
             Label name=new Label("Nom Client: "+av.getNomClient(), "NewsTopLine2");
             Label act=new Label("Nom Activite: "+av.getNomAct(), "NewsTopLine2");
             Label message=new Label("Message: "+av.getMessage(), "NewsTopLine2");

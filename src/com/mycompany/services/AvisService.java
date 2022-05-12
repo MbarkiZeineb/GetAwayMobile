@@ -42,11 +42,13 @@ public class AvisService {
         return instance;
     }
 
-  public List<Avis> getMyavis() {
+  public List<Avis> getMyavis(int id) {
          req=new ConnectionRequest();
         String url = Statics.BASE_URL+"/avis/avisgetting";
         req.setUrl(url);
         req.setPost(false);
+         req.addArgument("id",+id+"");
+        
         req.addResponseListener(new ActionListener<NetworkEvent>() {
             @Override
             public void actionPerformed(NetworkEvent evt) {
