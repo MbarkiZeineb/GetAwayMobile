@@ -50,6 +50,7 @@ public class ActiviteService {
          req=new ConnectionRequest();
         String url = Statics.BASE_URL+"/activite/actgetting";
         req.setUrl(url);
+        
         req.setPost(false);
         req.addResponseListener(new ActionListener<NetworkEvent>() {
             @Override
@@ -74,6 +75,7 @@ public class ActiviteService {
             for(Map<String,Object> e : list){
                 
                 Activite a = new Activite();
+                a.setRefAct((int)Float.parseFloat(e.get("refact").toString()));
                 a.setNom(e.get("nom").toString());
                 a.setDescrip(e.get("descrip").toString());
                 a.setDuree(e.get("duree").toString());

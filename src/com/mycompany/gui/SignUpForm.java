@@ -51,7 +51,7 @@ public class SignUpForm extends BaseForm {
         getTitleArea().setUIID("Container");
         Form previous = Display.getInstance().getCurrent();
         tb.setBackCommand("", e -> previous.showBack());
-        setUIID("SignIn");
+        setUIID("SignUp");
                 
         TextField nom = new TextField("", "Nom", 20, TextField.ANY);
          TextField prenom = new TextField("", "Prenom", 20, TextField.ANY);

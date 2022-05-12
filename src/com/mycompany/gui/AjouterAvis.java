@@ -14,6 +14,7 @@ import com.codename1.ui.TextField;
 import com.codename1.ui.Toolbar;
 import com.codename1.ui.layouts.BoxLayout;
 import com.codename1.ui.util.Resources;
+import com.mycompany.entities.Activite;
 import com.mycompany.entities.Avis;
 
 import com.mycompany.services.AvisService;
@@ -25,7 +26,7 @@ import com.mycompany.services.AvisService;
  */
 public class AjouterAvis extends Form{
 Form current;
-    public AjouterAvis(Resources res) {
+    public AjouterAvis(Resources res,Activite act) {
         
         super("Newsfeed",BoxLayout.y());
     
@@ -64,8 +65,8 @@ ajouter.addActionListener(e->{
              Avis av=new Avis();
          
        
-       av.setId(73);
-       av.setRefActivite(42);
+       av.setId(SessionManager.getId());
+       av.setRefActivite(act.getRefAct());
        av.setMessage(message.getText());
        av.setRating((int)Float.parseFloat(rating.getText()));
       

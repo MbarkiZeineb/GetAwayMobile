@@ -64,9 +64,12 @@ public class AfficherActiviteForm extends BaseForm{
             Label Type =new Label("Type: "+ a.getType(), "NewsTopLine2");
             Label Location =new Label("Location: "+ a.getLocation(), "NewsTopLine2");
             Label prix =new Label("Prix : "+ a.getPrix(), "NewsTopLine2");
-           
-             cnt.addAll(cnt2,nom,descrip,Nbrplace,Date,Type,Location,prix);
- 
+             Button btnajouter = new Button("Ajouter Avis");
+            cnt.addAll(cnt2,nom,descrip,Nbrplace,Date,Type,Location,prix,btnajouter);
+ btnajouter.addActionListener((e) -> {
+            new AjouterAvis(res,a).show();
+        });
+            
                      
     }   
                   
