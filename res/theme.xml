@@ -335,6 +335,7 @@
     </theme>
     <image name="timeline-background.jpg"  />
     <image name="twitter-logo.png" type="multi"  />
+    <image name="voy.jpg"  />
     <image name="welcome-background.jpg"  />
     <image name="welcome-slide-1.png" type="multi"  />
     <image name="welcome-slide-2.png" type="multi"  />

@@ -6,9 +6,9 @@
         <group>
             <file>file:/D:/3A6S1/S2/projetMobile/GetAway/src/com/mycompany/servies/voyageOrganiseService.java</file>
             <file>file:/D:/3A6S1/S2/projetMobile/GetAway/src/com/mycompany/gui/AfficherVoyageForm.java</file>
-            <file>file:/D:/3A6S1/S2/projetMobile/GetAway/src/com/mycompany/gui/AjouterVoyageOForm.java</file>
-            <file>file:/D:/3A6S1/S2/projetMobile/GetAway/src/com/mycompany/utlis/Statics.java</file>
             <file>file:/D:/3A6S1/S2/projetMobile/GetAway/src/com/mycompany/getAway/MyApplication.java</file>
+            <file>file:/D:/3A6S1/S2/projetMobile/GetAway/src/com/mycompany/gui/ajoutVoyageForm.java</file>
+            <file>file:/D:/3A6S1/S2/projetMobile/GetAway/src/com/company/entities/voyageOrganise.java</file>
         </group>
     </open-files>
 </project-private>

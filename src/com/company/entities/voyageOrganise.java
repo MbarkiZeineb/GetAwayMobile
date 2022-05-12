@@ -23,6 +23,14 @@ public class voyageOrganise {
     public voyageOrganise() {
     }
 
+    public voyageOrganise(String villeDepart, String villeDest, int nbrPlace) {
+        this.villeDepart = villeDepart;
+        this.villeDest = villeDest;
+        this.nbrPlace = nbrPlace;
+    }
+    
+    
+
     public voyageOrganise(String villeDepart, String villeDest, String dateDepart, String dateArrive, int nbrPlace, int idCat, float prix, String description) {
        // this.idVoy = idVoy;
         this.villeDepart = villeDepart;

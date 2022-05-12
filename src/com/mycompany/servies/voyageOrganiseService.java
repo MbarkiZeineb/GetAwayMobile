@@ -29,10 +29,10 @@ public class voyageOrganiseService {
        public ArrayList<voyageOrganise> voyages;
     
     public static  voyageOrganiseService instance=null;
-    public boolean resultOK;
+    public boolean result;
     private ConnectionRequest req;
 
-    private voyageOrganiseService() {
+    public voyageOrganiseService() {
          req = new ConnectionRequest();
     }
 
@@ -43,7 +43,7 @@ public class voyageOrganiseService {
         return instance;
     }
 
-  public List<voyageOrganise> getMyReservations() {
+  public List<voyageOrganise> getMyVoyages() {
          req=new ConnectionRequest();
         String url = Statics.BASE_URL+"/voyageorganise"+"/getallVoyage";
         req.setUrl(url);
@@ -95,23 +95,52 @@ public class voyageOrganiseService {
 }
 
 
- public void ajoutvoy(voyageOrganise voy) {
-        
-        String url =Statics.BASE_URL+"/voyageorganise/addRecJson?villedepart="+voy.getVilleDepart()+"&villedest="+voy.getVilleDest()+"datedep="+voy.getDateDepart()+"datef"+voy.getDateArrive()+"&nbrplace="+voy.getNbrPlace()+"&description="+voy.getDescription()+"&idcat="+voy.getIdCat()+"prix"+voy.getPrix(); 
+
+  public boolean ajoutvoy(voyageOrganise voy) {
+    
+     String url =Statics.BASE_URL+"/voyageorganise/addRecJson/";
+       req.setUrl(url);
+       req.setPost(false);
+       req.addArgument("villedepart",voy.getVilleDepart());
+       req.addArgument("villedest",voy.getVilleDest());
+       req.addArgument("datedep",voy.getDateDepart());
+         req.addArgument("datearrive",voy.getDateArrive());
+          req.addArgument("nbrplace",voy.getNbrPlace()+"");
+           req.addArgument("idcat",voy.getIdCat()+"");
+            req.addArgument("prix",voy.getPrix()+"");
+            req.addArgument("description",voy.getDescription());
+        System.out.println(url);
+       req.addResponseListener(new ActionListener<NetworkEvent>() {
+            @Override
+            public void actionPerformed(NetworkEvent evt) {
+                result = req.getResponseCode() == 200; //Code HTTP 200 OK
+                req.removeResponseListener(this);
+               
+            }
+        });
+          NetworkManager.getInstance().addToQueueAndWait(req);
+       
+        return result;
+       
+      
+    }
+
+public boolean deleteVoy(int idvoy ) {
+        String url = Statics.BASE_URL +"/voyageorganise/deletevoy/"+idvoy;
         
         req.setUrl(url);
-        req.addResponseListener((e) -> {
-            
-            String str = new String(req.getResponseData());
-            System.out.println("data == "+str);
+        
+        req.addResponseListener(new ActionListener<NetworkEvent>() {
+            @Override
+            public void actionPerformed(NetworkEvent evt) {
+                    
+                    req.removeResponseCodeListener(this);
+            }
         });
         
         NetworkManager.getInstance().addToQueueAndWait(req);
-        
+        return  result;
     }
-
-
-
 
 
 
