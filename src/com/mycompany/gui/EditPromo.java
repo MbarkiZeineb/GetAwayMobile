@@ -25,7 +25,7 @@ import java.text.SimpleDateFormat;
  *
  * @author louay
  */
-public class EditPromo extends BaseForm {
+public class EditPromo extends BaseFormOff {
 
     Form current;
 

@@ -36,11 +36,7 @@ public class AfficherVoyageClient extends BaseForm{
         
                 
         Form current;
-         Button btnajouter = new Button("Ajouter voy");
-  add(btnajouter);
- btnajouter.addActionListener((e) -> {
-            new ajoutVoyageForm(res).show();
-        });
+ 
              setTitle("Liste Des voyages ");
         setLayout(BoxLayout.y());
          getContentPane().setScrollVisible(false);

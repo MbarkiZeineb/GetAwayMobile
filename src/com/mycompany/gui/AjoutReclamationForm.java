@@ -42,20 +42,14 @@ public class AjoutReclamationForm extends BaseForm {
     
     Form current;
     public AjoutReclamationForm(Resources res ) {
-        super("Newsfeed",BoxLayout.y()); //herigate men Newsfeed w l formulaire vertical
-    
-        Toolbar tb = new Toolbar(true);
+        setTitle("Espace Reclamation ");
+        setLayout(BoxLayout.y());
+          Container cnt= new Container(BoxLayout.y());
         current = this ;
-        setToolbar(tb);
         super.addSideMenu(res);
-        getTitleArea().setUIID("Container");
-        setTitle("Ajout Reclamation");
-        getContentPane().setScrollVisible(false);
         
         
-        tb.addSearchCommand(e ->  {
-            
-        });
+     
         
 //        Tabs swipe = new Tabs();
 //        

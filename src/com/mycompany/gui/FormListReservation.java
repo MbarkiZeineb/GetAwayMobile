@@ -121,7 +121,7 @@ public class FormListReservation  extends BaseForm {
                         if(p.getEtat().equals("Approuve"))
                         {      
                             if(ReservationService.getInstance().modifierReservationmaison(p)) {
-                                  ToastBar.showInfoMessage("Reservation est supprime").show();
+                                  ToastBar.showInfoMessage("Reservation est Annuler ").show();
                                new  FormListReservation(res).show();                    
                           }
                             

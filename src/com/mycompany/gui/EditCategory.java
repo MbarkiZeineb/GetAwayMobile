@@ -22,7 +22,7 @@ import com.mycompany.services.ServiceCategory;
  *
  * @author louay
  */
-public class EditCategory extends BaseForm {
+public class EditCategory extends BaseFormOff {
 
     Form current;
 

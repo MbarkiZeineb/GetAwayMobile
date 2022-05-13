@@ -5,16 +5,17 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/Asus/OneDrive/Bureau/IntegrationMobile/GetAwayMobile/src/com/mycompany/services/ReservationService.java</file>
-            <file>file:/C:/Users/Asus/OneDrive/Bureau/IntegrationMobile/GetAwayMobile/src/com/mycompany/gui/ListReclamationForm.java</file>
-            <file>file:/C:/Users/Asus/OneDrive/Bureau/IntegrationMobile/GetAwayMobile/src/com/mycompany/services/ServiceReclamation.java</file>
-            <file>file:/C:/Users/Asus/OneDrive/Bureau/IntegrationMobile/GetAwayMobile/src/com/mycompany/gui/SignInForm.java</file>
-            <file>file:/C:/Users/Asus/OneDrive/Bureau/IntegrationMobile/GetAwayMobile/src/com/mycompany/gui/ReserverVoyageOForm.java</file>
-            <file>file:/C:/Users/Asus/OneDrive/Bureau/IntegrationMobile/GetAwayMobile/src/com/mycompany/services/ActiviteService.java</file>
+            <file>file:/C:/Users/Asus/OneDrive/Bureau/IntegrationMobile/GetAwayMobile/src/com/mycompany/gui/ShowHebergement.java</file>
+            <file>file:/C:/Users/Asus/OneDrive/Bureau/IntegrationMobile/GetAwayMobile/src/com/mycompany/gui/AddHebergement.java</file>
+            <file>file:/C:/Users/Asus/OneDrive/Bureau/IntegrationMobile/GetAwayMobile/src/com/mycompany/gui/AfficherHbergementClientForm.java</file>
+            <file>file:/C:/Users/Asus/OneDrive/Bureau/IntegrationMobile/GetAwayMobile/src/com/mycompany/gui/AfficherVoyageClient.java</file>
+            <file>file:/C:/Users/Asus/OneDrive/Bureau/IntegrationMobile/GetAwayMobile/src/com/mycompany/gui/AddCategory.java</file>
+            <file>file:/C:/Users/Asus/OneDrive/Bureau/IntegrationMobile/GetAwayMobile/src/com/mycompany/gui/ShowCategory.java</file>
             <file>file:/C:/Users/Asus/OneDrive/Bureau/IntegrationMobile/GetAwayMobile/src/com/mycompany/gui/FormListReservation.java</file>
-            <file>file:/C:/Users/Asus/OneDrive/Bureau/IntegrationMobile/GetAwayMobile/src/com/mycompany/gui/ReserverHebergementForm.java</file>
-            <file>file:/C:/Users/Asus/OneDrive/Bureau/IntegrationMobile/GetAwayMobile/src/com/mycompany/gui/ReserverVol.java</file>
-            <file>file:/C:/Users/Asus/OneDrive/Bureau/IntegrationMobile/GetAwayMobile/src/com/mycompany/gui/AfficherActiviteForm.java</file>
-            <file>file:/C:/Users/Asus/OneDrive/Bureau/IntegrationMobile/GetAwayMobile/src/com/mycompany/gui/BaseForm.java</file>
+            <file>file:/C:/Users/Asus/OneDrive/Bureau/IntegrationMobile/GetAwayMobile/src/com/mycompany/services/ServiceUser.java</file>
+            <file>file:/C:/Users/Asus/OneDrive/Bureau/IntegrationMobile/GetAwayMobile/src/com/mycompany/entities/Vol.java</file>
+            <file>file:/C:/Users/Asus/OneDrive/Bureau/IntegrationMobile/GetAwayMobile/src/com/mycompany/services/VolService.java</file>
+            <file>file:/C:/Users/Asus/OneDrive/Bureau/IntegrationMobile/GetAwayMobile/src/com/mycompany/gui/AjoutReclamationForm.java</file>
         </group>
     </open-files>
 </project-private>

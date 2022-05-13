@@ -31,7 +31,7 @@ public class ReserverVol extends BaseForm {
      
         current = this ; 
       super.addSideMenu(res);
-    setTitle("Reservation voyage organise  ");
+    setTitle("Reservation vol  ");
    TextField tnbreplace = new TextField("","Nombres de places",20, TextField.ANY);
       tnbreplace.setUIID("TextFieldBlack");
    ComboBox<String> comboModalite= new ComboBox<String>("","Cache" ,"Cheque","Carte bancaire");

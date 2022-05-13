@@ -70,6 +70,7 @@ public class VolService {
             for(Map<String,Object> e : list){
 
                 Vol r = new Vol();
+                  r.setId_vol((int)Float.parseFloat(e.get("idVol").toString()));
                  r.setNum_vol((int)Float.parseFloat(e.get("numVol").toString()));
                 r.setNbr_placedispo((int)Float.parseFloat(e.get("nbrPlacedispo").toString()));
                 r.setVille_depart(e.get("villeDepart").toString());
@@ -115,6 +116,7 @@ public class VolService {
                       
                     for (Map<String, Object> obj : listOfMaps) {
                         Vol v = new Vol();
+                         v.setId_vol((int)Float.parseFloat(obj.get("idVol").toString()));
                         int num_vol = (int) Float.parseFloat(obj.get("numVol").toString());
                          int nbrplace = (int) Float.parseFloat(obj.get("nbrPlacedispo").toString());
                         String villeDepart = obj.get("villeDepart").toString();

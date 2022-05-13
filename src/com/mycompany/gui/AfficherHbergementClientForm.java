@@ -60,7 +60,7 @@ public class AfficherHbergementClientForm extends BaseForm{
         Label s1 = new Label();
         Label s2 = new Label();
 
-
+               super.addSideMenu(res);
         swipe.setUIID("Container");
         swipe.getContentPane().setUIID("Container");
         swipe.hideTabs();
