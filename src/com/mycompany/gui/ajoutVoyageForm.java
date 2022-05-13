@@ -6,6 +6,7 @@
 package com.mycompany.gui;
 
 import com.codename1.components.InfiniteProgress;
+import com.codename1.l10n.SimpleDateFormat;
 import com.codename1.ui.Button;
 import com.codename1.ui.Component;
 import com.codename1.ui.Container;
@@ -90,11 +91,11 @@ ajouter.addActionListener(e->{
          
         
              voyageOrganiseService sa=new voyageOrganiseService();
-          
+          String des=(new SimpleDateFormat("yyyy-MM-dd")).format(dateArrive.getDate());
        ann.setVilleDepart(villeDepart.getText());
        ann.setVilleDest(villeDest.getText());
-       ann.setDateDepart(dateDepart.getText());
-       ann.setDateArrive(dateArrive.getText());
+       ann.setDateDepart((new SimpleDateFormat("yyyy-MM-dd")).format(dateDepart.getDate()));
+       ann.setDateArrive(des);
        ann.setNbrPlace((int)Float.parseFloat(nbrPlace.getText()));
        ann.setIdCat((int)Float.parseFloat(idCat.getText()));
        ann.setPrix((int)Float.parseFloat(prix.getText()));

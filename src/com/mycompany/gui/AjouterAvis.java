@@ -28,7 +28,7 @@ public class AjouterAvis extends Form{
 Form current;
     public AjouterAvis(Resources res,Activite act) {
         
-        super("Newsfeed",BoxLayout.y());
+        super("Ajouter Votre Avis",BoxLayout.y());
     
         Toolbar tb = new Toolbar(true);
         current = this ;

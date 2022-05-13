@@ -58,7 +58,7 @@ public class ListReclamationForm  extends BaseForm {
         setLayout(BoxLayout.y());
           Container cnt= new Container(BoxLayout.y());
         current = this ;
-        super.addSideMenu(res);
+       
          List<Reclamation> list=ServiceReclamation.getInstance().getMyReclam(SessionManager.getId());
           Container cnt3= new Container(BoxLayout.y());
         for(Reclamation p:list){

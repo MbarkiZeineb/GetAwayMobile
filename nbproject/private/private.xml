@@ -3,19 +3,6 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/1"/>
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/Asus/OneDrive/Bureau/IntegrationMobile/GetAwayMobile/src/com/mycompany/services/ReservationService.java</file>
-            <file>file:/C:/Users/Asus/OneDrive/Bureau/IntegrationMobile/GetAwayMobile/src/com/mycompany/gui/ShowHebergement.java</file>
-            <file>file:/C:/Users/Asus/OneDrive/Bureau/IntegrationMobile/GetAwayMobile/src/com/mycompany/gui/AddHebergement.java</file>
-            <file>file:/C:/Users/Asus/OneDrive/Bureau/IntegrationMobile/GetAwayMobile/src/com/mycompany/gui/AfficherHbergementClientForm.java</file>
-            <file>file:/C:/Users/Asus/OneDrive/Bureau/IntegrationMobile/GetAwayMobile/src/com/mycompany/gui/AfficherVoyageClient.java</file>
-            <file>file:/C:/Users/Asus/OneDrive/Bureau/IntegrationMobile/GetAwayMobile/src/com/mycompany/gui/AddCategory.java</file>
-            <file>file:/C:/Users/Asus/OneDrive/Bureau/IntegrationMobile/GetAwayMobile/src/com/mycompany/gui/ShowCategory.java</file>
-            <file>file:/C:/Users/Asus/OneDrive/Bureau/IntegrationMobile/GetAwayMobile/src/com/mycompany/gui/FormListReservation.java</file>
-            <file>file:/C:/Users/Asus/OneDrive/Bureau/IntegrationMobile/GetAwayMobile/src/com/mycompany/services/ServiceUser.java</file>
-            <file>file:/C:/Users/Asus/OneDrive/Bureau/IntegrationMobile/GetAwayMobile/src/com/mycompany/entities/Vol.java</file>
-            <file>file:/C:/Users/Asus/OneDrive/Bureau/IntegrationMobile/GetAwayMobile/src/com/mycompany/services/VolService.java</file>
-            <file>file:/C:/Users/Asus/OneDrive/Bureau/IntegrationMobile/GetAwayMobile/src/com/mycompany/gui/AjoutReclamationForm.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

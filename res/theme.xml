@@ -6,10 +6,14 @@
     <image name="back.png"  />
     <image name="backgris.png"  />
     <image name="confirmation-background.jpg"  />
+    <image name="deer-horns-sunset-silhouette-6267363093a5e190200808 (1).jpg"  />
+    <image name="deer-horns-sunset-silhouette-6267363093a5e190200808.jpg"  />
+    <image name="deer-horns-sunset-silhouette-6267372c47295172943083.jpg"  />
     <image name="dog.jpg"  />
     <image name="f.png"  />
     <image name="facebook-logo.png" type="multi"  />
     <image name="ff.png"  />
+    <image name="fin-chasse-62611642596f7765695400.jpg"  />
     <l10n name="l1">
         <lang name="en">
             <entry key="menu" value="Menu" />
@@ -19,8 +23,8 @@
             <entry key="Calendar.Thursday" value="Thu" />
             <entry key="ok" value="OK" />
             <entry key="Calendar.Saturday" value="Sat" />
-            <entry key="select" value="Select" />
             <entry key="Calendar.Friday" value="Fri" />
+            <entry key="select" value="Select" />
             <entry key="edit" value="Edit" />
             <entry key="Calendar.Monday" value="Mon" />
             <entry key="cancel" value="Cancel" />
@@ -41,18 +45,26 @@
     <image name="profile-background.jpg"  />
     <image name="profile-pic.jpg" type="multi"  />
     <image name="r.png"  />
+    <image name="randonneur-debout-devant-tente-orange-devant-camping-sac-dos-montagne_1150-9163.jpg"  />
     <image name="reservation.jpg"  />
+    <image name="Screenshot_19.png"  />
     <image name="signin-background.jpg"  />
     <image name="signup-background.jpg"  />
+    <image name="Skydive-opleiding-Frankrijk-9.jpg"  />
     <image name="smily.png" type="multi"  />
+    <image name="surf-in-oregon.jpg"  />
+    <image name="surf.jpg"  />
+    <image name="swimming.jpg"  />
+    <image name="tag-metier-bayview-vert-626a498cd241a692215138.png"  />
+    <image name="tennis-origins-e1444901660593.png"  />
     <theme name="Theme">
         <val key="@includeNativeBool" value="true" />
         <val key="@tabPlacementInt" value="0" />
-        <val key="Activate.bgImage" value="activation-background.jpg" />
+        <val key="Activate.bgImage" value="yellow.png" />
         <val key="Activate.bgType" value="33" />
-        <val key="Activate.margin" value="0,0,0,0" />
+        <val key="Activate.margin" value="0.0,0.0,0.0,0.0" />
         <val key="Activate.padUnit" value="0,0,2,0" />
-        <val key="Activate.padding" value="0,3,0,0" />
+        <val key="Activate.padding" value="0.0,3.0,0.0,0.0" />
         <val key="Activate.transparency" value="255" />
         <val key="BottomPad.align" value="4" />
         <val key="BottomPad.fgColor" value="a2a1b8" />
@@ -384,6 +396,7 @@
     </theme>
     <image name="timeline-background.jpg"  />
     <image name="twitter-logo.png" type="multi"  />
+    <image name="validation-92049361.jpg"  />
     <image name="welcome-background.jpg"  />
     <image name="welcome-slide-1.png" type="multi"  />
     <image name="welcome-slide-2.png" type="multi"  />

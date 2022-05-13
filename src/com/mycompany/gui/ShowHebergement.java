@@ -137,7 +137,7 @@ public class ShowHebergement extends BaseFormOff {
         addOrientationListener(e -> {
             updateArrowPosition(barGroup.getRadioButton(barGroup.getSelectedIndex()), arrow);
         });
-
+//affichage hebergement 
         ArrayList< Hebergement> list = ServiceHebergement.getInstance().affichageHebergementsOffreur(SessionManager.getId());
 
         for (Hebergement rec : list) {

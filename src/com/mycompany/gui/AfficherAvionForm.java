@@ -55,7 +55,7 @@ add(btnajouter);
          List<Avion> list=AvionService.getInstance().getMyavions(SessionManager.getId());
          Container cnt3= new Container(BoxLayout.y());
         for(Avion p:list){
-        Container cnt2= new Container(BoxLayout.x());
+        Container cnt2= new Container(BoxLayout.xCenter());
         Label lbi= new Label(res.getImage("f.png"));
         cnt2.add(lbi);
         

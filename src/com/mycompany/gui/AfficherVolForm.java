@@ -76,7 +76,7 @@ public class AfficherVolForm extends BaseForm{
             
            
            
-        Container cnt2= new Container(BoxLayout.x());
+        Container cnt2= new Container(BoxLayout.xCenter());
         Label lbi= new Label(res.getImage("ff.png"));
         cnt2.add(lbi);
         
