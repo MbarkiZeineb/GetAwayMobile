@@ -71,7 +71,6 @@ public class VolService {
 
                 Vol r = new Vol();
                   r.setId_vol((int)Float.parseFloat(e.get("idVol").toString()));
-                 r.setNum_vol((int)Float.parseFloat(e.get("numVol").toString()));
                 r.setNbr_placedispo((int)Float.parseFloat(e.get("nbrPlacedispo").toString()));
                 r.setVille_depart(e.get("villeDepart").toString());
                 r.setVille_arrivee(e.get("villeArrivee").toString());

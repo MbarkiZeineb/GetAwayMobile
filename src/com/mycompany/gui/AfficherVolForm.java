@@ -82,7 +82,7 @@ public class AfficherVolForm extends BaseForm{
         
          
             
-            Label nomVol=new Label("Num vol : "+p.getNum_vol(), "NewsTopLine2");
+           
             Label nbrplace =new Label("Nbr place dispo : "+ p.getNbr_placedispo(), "NewsTopLine2");
             Label villedepart =new Label("Ville Depart : "+ p.getVille_depart(), "NewsTopLine2");
             Label villearrivee =new Label("Ville Arrivee : "+ p.getVille_arrivee(), "NewsTopLine2");
@@ -90,7 +90,7 @@ public class AfficherVolForm extends BaseForm{
             Label datearr =new Label("Date Arrivee : "+ p.getDate_arrivee(), "NewsTopLine2");
             Label prix =new Label("Prix : "+ p.getPrix(), "NewsTopLine2");
                Button bnt = new Button("reserver");
-             cnt.addAll(cnt2,nomVol,nbrplace,villedepart,villearrivee,datedep,datearr,prix,bnt);
+             cnt.addAll(cnt2,nbrplace,villedepart,villearrivee,datedep,datearr,prix,bnt);
              
                 bnt.addActionListener(e->
                          {

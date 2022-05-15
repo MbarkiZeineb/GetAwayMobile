@@ -86,6 +86,6 @@ public class BaseForm extends Form {
        
           tb.addMaterialCommandToSideMenu("Espace reclamation ", FontImage.MATERIAL_COMMENT, e -> {new AjoutReclamationForm(res).show();}); 
           tb.addMaterialCommandToSideMenu("Calendar", FontImage.MATERIAL_CALENDAR_TODAY, e -> {new CalendarForm(res).show();});
-         tb.addMaterialCommandToSideMenu("Logout", FontImage.MATERIAL_EXIT_TO_APP, e -> new WalkthruForm(res).show());
+         tb.addMaterialCommandToSideMenu("Logout", FontImage.MATERIAL_EXIT_TO_APP, e -> new SignInForm(res).show());
     }
 }
